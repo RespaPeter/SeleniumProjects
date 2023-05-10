@@ -2,19 +2,20 @@ package com.qalegend.testscript;
 
 import java.io.IOException;
 
+
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.qalegend.automationcore.Base;
+import com.qalegend.automationcore.BaseSetup;
 import com.qalegend.constants.Constants;
 import com.qalegend.pages.LoginPage;
 import com.qalegend.utilities.ExcelUtility;
 
 
 
-public class LoginTest extends Base{
+public class LoginTest extends BaseSetup{
 	LoginPage login;
   @Test(dataProvider="UserCredentials",priority=1,description = "verify valid login",groups = {"Regression"})
   public void verifyLogin(String uname,String pword)throws InvalidFormatException,IOException {
@@ -26,10 +27,12 @@ public class LoginTest extends Base{
 	 /* login.enterUserName("admin");
 	  login.enterUserPassword("123456");*/
 	  login.loginButtonClick();
-	  String actualUrl=login.currentUrl();
+	  login.pageWait();
+	 String actualUrl=login.currentUrl();
 	  String expectedUrl="https://qalegend.com/billing/public/home";
-	  Assert.assertEquals(actualUrl, expectedUrl);
+	 Assert.assertEquals(actualUrl, expectedUrl);
 	  System.out.println("Login Successfully");
+	
 	  
 	  
   }

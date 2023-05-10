@@ -12,19 +12,11 @@
     <classes>
       <class name="com.qalegend.testscript.LoginTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="verifyLogin" invocation-numbers="0 1"/>
+          <include name="verifyLogin"/>
+          <include name="failedScreenshot"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.qalegend.testscript.LoginTest -->
-      <class name="com.qalegend.testscript.HomeTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="calculatorClick"/>
-          <include name="posTerminal"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.qalegend.testscript.HomeTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

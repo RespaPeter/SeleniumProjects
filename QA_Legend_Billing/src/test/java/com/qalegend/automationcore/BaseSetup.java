@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
@@ -21,11 +22,11 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 
-public class Base {
+public class BaseSetup {
 	public WebDriver driver;
 	public Properties prop;
 	public FileInputStream fs;
-	public Base()
+	public BaseSetup()
 	{
 		prop=new Properties();
 		try
@@ -74,7 +75,7 @@ public class Base {
  
 
   @AfterMethod(alwaysRun = true)
-  public void tearDown(ITestResult result)throws IOException {
+  /*public void tearDown(ITestResult result)throws IOException {
 	  if(result.getStatus()==ITestResult.FAILURE)
 	  {
 		  TakesScreenshot takeScreenShot=(TakesScreenshot)driver;
@@ -82,6 +83,21 @@ public class Base {
 		  FileUtils.copyFile(screenshot,new File("./Screenshots/"+result.getName()+".png"));
 	  }
 	 // driver.quit();
-  }
+  }*/
+  public void failedScreenshot(String testMethodName)throws IOException {
+	 File srcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	 Date d=new Date();
+	 try
+	 {
+		 FileUtils.copyFile(srcFile, new File("C:\\Users\\PRAGAL\\OneDrive\\Documents\\screenshot"+testMethodName+"_"+".png"));
+		 
+	 }
+	 catch (Exception e) {
+		 
+		// TODO: handle exception
+	e.printStackTrace();
+	 }
+	 
+	  }
 
 }

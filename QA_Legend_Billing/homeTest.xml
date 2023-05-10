@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="TestHome">
+    <classes>
+      <class name="com.qalegend.testscript.HomeTest">
+          	<methods>
+      
+      	<exclude name="calculatorClick"></exclude>
+      	<exclude name="posTerminal"></exclude>
+      	<include name="userManagment"></include>
+      	</methods>
+      	</class>
+    
+    </classes>
+  </test> <!-- TestHome -->
+</suite> <!-- Suite -->

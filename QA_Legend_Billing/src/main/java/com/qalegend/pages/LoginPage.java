@@ -72,4 +72,8 @@ public Boolean checkElementSelected()
 	Boolean st=page.isElementSelectes(reremberMeCheckBox);
 	return st;
 }
+public void pageWait()
+{
+	wait.setPageLoadWait(driver);
+}
 }

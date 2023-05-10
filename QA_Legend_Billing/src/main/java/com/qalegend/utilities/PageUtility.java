@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -16,6 +17,18 @@ public class PageUtility {
 		return title;
 	}
  
+	public void javaScriptValue(WebElement element,String text,WebDriver driver)
+	{
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		 js.executeScript("arguments[0].value='text';", element);
+		
+	}
+	public void javaScriptClick(WebElement element,WebDriver driver)
+	{
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		 js.executeScript("arguments[0].click();", element);
+		
+	}
 	public String getCurrentUrl(WebDriver driver)
 	{
 		String url=driver.getCurrentUrl();
@@ -167,6 +180,12 @@ public class PageUtility {
 	}
 	
 	public Boolean isElementSelectes(WebElement element)
+	{
+		boolean value=element.isSelected();
+		return value;
+		
+	}
+	public Boolean isElementDisplayed(WebElement element)
 	{
 		boolean value=element.isSelected();
 		return value;

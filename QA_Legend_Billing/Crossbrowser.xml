@@ -15,19 +15,11 @@
       		<include name="verifyLogin"/>
       		<exclude name="rememberMe"/>
       		<exclude name="verifyLoginTitle"/>
-      		 <exclude name="verify Invalid login"></exclude>
+      		 <exclude name="verifyInvalidLogin"></exclude>
    
       	</methods>
-      	
     </class>
-          	<class name="com.qalegend.testscript.HomeTest">
-      	<methods>
-      
-      	<include name="calculatorClick"></include>
-      	<include name="posTerminal"></include>
-      	</methods>
-      	</class>
-    </classes>
+        </classes>
       
  
   </test> <!-- Test -->

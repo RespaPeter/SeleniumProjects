@@ -6,7 +6,10 @@
       <class name="com.qalegend.testscript.HomeTest">
         <methods>
           <include name="tearDown"/>
+          <include name="verifyLogin" invocation-numbers="0"/>
+          <include name="calculatorClick"/>
           <include name="verifyInvalidLogin"/>
+          <include name="posTerminal"/>
           <include name="setUp"/>
           <include name="rememberMe"/>
           <include name="verifyLoginTitle"/>
