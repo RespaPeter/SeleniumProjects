@@ -39,6 +39,12 @@ public class WaitUtility {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(EXPLICIT_WAIT));
 				
 	}
+	public void waitForElementTOBeClickables(WebDriver driver,String type)
+	{
+		WebDriverWait waitForNextPage = new WebDriverWait(driver, Duration.ofMillis(5000));
+		waitForNextPage.until(ExpectedConditions.elementToBeClickable(By.xpath(type)));
+		
+	}
 	public static void setPageLoadWait(WebDriver driver)
 	{
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(PAGE_LOAD_WAIT));

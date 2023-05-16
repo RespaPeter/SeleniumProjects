@@ -1,4 +1,4 @@
-package com.aqlegend.extentReport;
+package com.qalegend.extentReport;
 import java.io.File;
 
 

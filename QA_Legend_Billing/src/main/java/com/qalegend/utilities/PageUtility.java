@@ -11,6 +11,14 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class PageUtility {
+	public void login(WebElement element,WebElement el2,WebElement sub,String uname,String pword)
+	{
+		element.sendKeys(uname);
+		el2.sendKeys(pword);
+		sub.click();
+		
+	}
+	
 	public String getPageTitle(WebDriver driver)
 	{
 		String title=driver.getTitle();
@@ -188,8 +196,9 @@ public class PageUtility {
 	public Boolean isElementDisplayed(WebElement element)
 	{
 		boolean value=element.isSelected();
-		return value;
+			return value;
 		
 	}
+
   
 }

@@ -1,11 +1,5 @@
-/*package com.qalegend.automationcore;
+package com.qalegend.base;
 
-
-
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import com.qalegend.constants.Constants;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,14 +13,17 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
-public class BaseSetup {
-	public WebDriver driver;
+import com.qalegend.constants.Constants;
+
+public class BaseSetUp {
+	public static WebDriver driver;
 	public Properties prop;
 	public FileInputStream fs;
-	public BaseSetup()
+	public BaseSetUp()
 	{
 		prop=new Properties();
 		try
@@ -74,7 +71,9 @@ public class BaseSetup {
   }
  
 
-  @AfterMethod(alwaysRun = true)
+ 
+
+ // @AfterMethod(alwaysRun = true)
   /*public void tearDown(ITestResult result)throws IOException {
 	  if(result.getStatus()==ITestResult.FAILURE)
 	  {
@@ -98,7 +97,5 @@ public class BaseSetup {
 	e.printStackTrace();
 	 }
 	 
-	  }
-
+	  }*/
 }
-*/

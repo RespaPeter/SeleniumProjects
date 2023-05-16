@@ -3,18 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qalegend.testscript.HomeTest">
+      <class name="com.qalegend.testscript.ProfitPageTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="verifyLogin" invocation-numbers="0"/>
-          <include name="calculatorClick"/>
-          <include name="verifyInvalidLogin"/>
-          <include name="posTerminal"/>
           <include name="setUp"/>
-          <include name="rememberMe"/>
-          <include name="verifyLoginTitle"/>
+          <include name="profitMethod" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.qalegend.testscript.HomeTest -->
+      </class> <!-- com.qalegend.testscript.ProfitPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

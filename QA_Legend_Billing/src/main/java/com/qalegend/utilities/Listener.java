@@ -1,24 +1,37 @@
 package com.qalegend.utilities;
-import com.qalegend.automationcore.BaseSetup;
+
+import java.io.IOException;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class Listener extends BaseSetup implements ITestListener {
+import com.qalegend.base.BaseSetUp;
+
+public class Listener extends BaseSetUp implements ITestListener{
 	
-	public void onTestStart(ITestResult result) {
-	
-		ScreenShotUtility.screenshotMethod((result.getName());
+public void onTestStart(ITestResult result) {
 		
 	}
 	
 	public void onTestSuccess(ITestResult result) {
-		
+		try {
+			ScreenshotUtility.takeScreenshot(result.getName());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
 	}
+	
 	public void onTestFailure(ITestResult result) {
 		
-		
+		try {
+			ScreenshotUtility.takeScreenshot(result.getName());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -37,9 +50,5 @@ public class Listener extends BaseSetup implements ITestListener {
 	public void onFinish(ITestContext context) {
 		
 	}
-
-
-	
-
 
 }

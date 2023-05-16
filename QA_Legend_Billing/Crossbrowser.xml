@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
+
+
+<listeners>
+
+
+<listener class-name="com.qalegend.extentReport.ExtentReportCls"></listener>
+
+<listener class-name="com.qalegend.utilities.Listener"></listener>
+
+
+</listeners>
+  <test thread-count="2" parallel="classes"  name="Test">
   <parameter name="browser" value="chrome"></parameter>
   <groups>
   <run>
@@ -11,13 +22,7 @@
   </groups>
     <classes>
     <class name="com.qalegend.testscript.LoginTest">
-      	<methods>
-      		<include name="verifyLogin"/>
-      		<exclude name="rememberMe"/>
-      		<exclude name="verifyLoginTitle"/>
-      		 <exclude name="verifyInvalidLogin"></exclude>
-   
-      	</methods>
+      	
     </class>
         </classes>
       

@@ -29,14 +29,22 @@ public class HomePage extends TestHelper {
 	@FindBy(xpath = _pos)
 	private WebElement pos;
 	
-	private final String _mgmentUser="//span[text()='User Management']";
-	@FindBy(xpath=_mgmentUser)
-	private WebElement mgmentUser;
+	
 	
 	private final String _userMgmt="//a[@href='https://qalegend.com/billing/public/users']";
 	@FindBy(xpath=_userMgmt)
 	private WebElement userMgmt;
 	
+	@FindBy(xpath="//h3[@class='popover-title']")
+	WebElement cal;
+	
+	@FindBy(xpath="//section[@class='content-header']")
+	WebElement header;
+	public String elementText()
+	{
+		String s=page.getElementText(header);
+		return s;
+	}
 	
 	public void clickALert()
 	{
@@ -54,15 +62,17 @@ public class HomePage extends TestHelper {
 	{
 		page.clickOnElement(pos);
 	}
-	public void userMgClick()
-	{
-		page.clickOnElement(mgmentUser);
-	}
+	
 		
 	public boolean elementDisplayed()
 	{
 		boolean status=page.isElementDisplayed(userMgmt);
 		return status;
 		
+	}
+	public String elementTexte()
+	{
+		String value=page.getElementText(cal);
+		return value;
 	}
 }

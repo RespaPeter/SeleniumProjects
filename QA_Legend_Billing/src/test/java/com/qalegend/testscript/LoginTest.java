@@ -8,16 +8,17 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.qalegend.automationcore.BaseSetup;
+import com.qalegend.base.BaseSetUp;
 import com.qalegend.constants.Constants;
 import com.qalegend.pages.LoginPage;
+import com.qalegend.retryAnalyser.Retry;
 import com.qalegend.utilities.ExcelUtility;
 
 
 
-public class LoginTest extends BaseSetup{
+public class LoginTest extends BaseSetUp{
 	LoginPage login;
-  @Test(dataProvider="UserCredentials",priority=1,description = "verify valid login",groups = {"Regression"})
+  @Test(dataProvider="UserCredentials",priority=1,description = "verify valid login",groups = {"Regression"},retryAnalyzer = Retry.class)
   public void verifyLogin(String uname,String pword)throws InvalidFormatException,IOException {
 	  login=new LoginPage(driver);
 	  System.out.println("Username"+uname);
@@ -27,7 +28,7 @@ public class LoginTest extends BaseSetup{
 	 /* login.enterUserName("admin");
 	  login.enterUserPassword("123456");*/
 	  login.loginButtonClick();
-	  login.pageWait();
+	  //login.pageWait();
 	 String actualUrl=login.currentUrl();
 	  String expectedUrl="https://qalegend.com/billing/public/home";
 	 Assert.assertEquals(actualUrl, expectedUrl);
@@ -36,7 +37,7 @@ public class LoginTest extends BaseSetup{
 	  
 	  
   }
-  @Test(priority=2,description = "verify Invalid login",groups = {"Smoke"})
+  @Test(priority=2,description = "verify Invalid login",groups = {"Smoke"},retryAnalyzer = Retry.class)
   public void verifyInvalidLogin() {
 	  login=new LoginPage(driver);
 	  login.enterUserName("admin");
@@ -49,16 +50,19 @@ public class LoginTest extends BaseSetup{
 	
 	  
   }
-  @Test(priority=1,description = "verify login page title",groups = {"Smoke"})
-  public void verifyLoginTitle() {
+  @Test(dataProvider="UserCredentials",priority=1,description = "verify login page title",groups = {"Smoke"})
+  public void verifyLoginTitle(String uname,String pword) {
 	  login=new LoginPage(driver);
-	  String expectedPageTitle="Home - QAlegend";
+	  login.enterUserName(uname);
+	  login.enterUserPassword(pword);
+	  login.loginButtonClick();
+	   String expectedPageTitle="Home - QAlegend";
 	  String actualPageTitle=login.getLoginPageTitle();
 	  Assert.assertEquals(actualPageTitle,expectedPageTitle);
 	  System.out.println("Logined Successfully");
 	  
   }
-  @Test(priority=2,description = "remember me button",groups = {"Regression"})
+  @Test(priority=2,description = "remember me button",groups = {"Regression"},retryAnalyzer = Retry.class)
   public void rememberMe()
   {
 	  login=new LoginPage(driver);
