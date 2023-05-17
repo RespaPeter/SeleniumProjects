@@ -21,11 +21,11 @@
   </run>
   </groups>
     <classes>
-    <class name="com.qalegend.testscript.LoginTest">
-      	
-    </class>
+    <class name="com.qalegend.testscript.LoginTest"/>
+   
+    
+    
         </classes>
-      
  
   </test> <!-- Test -->
 </suite> <!-- Suite -->

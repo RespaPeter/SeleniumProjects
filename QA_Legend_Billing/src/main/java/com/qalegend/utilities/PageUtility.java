@@ -151,6 +151,11 @@ public class PageUtility {
 		Actions action=new Actions(driver);
 		action.moveByOffset( x, y).build().perform();
 	}
+	public void mouseHoverWebElement(WebDriver driver,WebElement el)
+	{
+		Actions action=new Actions(driver);
+		 action.moveToElement(el).perform();
+	}
 	public void dropDownSelectByIndex(WebElement target,int index)
 	{
 		Select select=new Select(target);

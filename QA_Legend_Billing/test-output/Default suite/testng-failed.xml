@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qalegend.testscript.ProfitPageTest">
+      <class name="com.qalegend.testscript.PosTest">
         <methods>
+          <include name="posFunctio" invocation-numbers="0"/>
           <include name="setUp"/>
-          <include name="profitMethod" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.qalegend.testscript.ProfitPageTest -->
+      </class> <!-- com.qalegend.testscript.PosTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
