@@ -25,13 +25,10 @@ public class LoginTest extends BaseSetUp{
 	  System.out.println("Password"+pword);
 	  login.enterUserName(uname);
 	  login.enterUserPassword(pword);
-	 /* login.enterUserName("admin");
-	  login.enterUserPassword("123456");*/
 	  login.loginButtonClick();
-	  //login.pageWait();
-	 String actualUrl=login.currentUrl();
+	  String actualUrl=login.currentUrl();
 	  String expectedUrl="https://qalegend.com/billing/public/home";
-	 Assert.assertEquals(actualUrl, expectedUrl);
+	  Assert.assertEquals(actualUrl, expectedUrl);
 	  System.out.println("Login Successfully");
 	
 	  
@@ -45,8 +42,8 @@ public class LoginTest extends BaseSetUp{
 	  login.loginButtonClick();
 	  String actualMessage=login.getErrorMessage();
 	  String expectedMessage="These credentials do not match our records.";
-	Assert.assertEquals(expectedMessage, actualMessage);
-	System.out.println(actualMessage);
+	  Assert.assertEquals(expectedMessage, actualMessage);
+	  System.out.println(actualMessage);
 	
 	  
   }
@@ -76,7 +73,7 @@ public class LoginTest extends BaseSetUp{
   }
   @DataProvider(name="UserCredentials")
   public Object[] UserCredentials() throws InvalidFormatException,IOException{
-	Object[][] data=ExcelUtility.getDataFromExcel(System.getProperty("user.dir")+Constants.EXCEL_PATH,"Sheet1");
+	Object[][] data=ExcelUtility.getDataFromExcel(System.getProperty("user.dir")+Constants.EXCEL_PATH,"InvalidLoginDetails");
 	 return data;
   }
 

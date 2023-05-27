@@ -7,6 +7,7 @@ public class Constants {
 	public static final String BROWSER_PATH="\\src\\main\\resources\\chromedriver.exe";
 	public static final String EDGE_PATH="\\src\\main\\resources\\msedgedriver.exe";
 	public static final String EXCEL_PATH="\\src\\main\\resources\\login.xlsx";
+	public static final String RESETPASSWORD_PATH="\\src\\main\\resources\\resetPassword.xlsx";
 		
 	}
  

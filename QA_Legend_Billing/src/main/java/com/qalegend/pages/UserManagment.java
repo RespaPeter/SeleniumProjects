@@ -1,10 +1,18 @@
 package com.qalegend.pages;
 
+import java.io.IOException;
+import java.util.List;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.DataProvider;
 
+import com.qalegend.constants.Constants;
+import com.qalegend.utilities.ExcelUtility;
 import com.qalegend.utilities.TestHelper;
 import com.qalegend.utilities.WaitUtility;
 
@@ -21,31 +29,87 @@ public class UserManagment extends TestHelper {
 	@FindBy(xpath=_mgmentUser)
 	private WebElement mgmentUser;
 	
-	@FindBy(xpath="(//ul[@class='treeview-menu'])[0]")
-	WebElement menuList;
-	/*
-	@FindBy(xpath="//ul[@class='treeview-menu menu-open']")
-	WebElement menu;
-	*/
+	private final String _userTab="//a[@href='https://qalegend.com/billing/public/users']";
+	@FindBy(xpath=_userTab)
+	private WebElement userTab;
 	
-	@FindBy(xpath="(//i[@class='fa fa-angle-left pull-right'])[1]")
-	WebElement elem;
+	private final String _addUser="//a[@href='https://qalegend.com/billing/public/users/create']";
+	@FindBy(xpath=_addUser)
+	private WebElement addUser;
+	
+	private final String _showUser="//select[@name='users_table_length']";
+	@FindBy(xpath=_showUser)
+	private WebElement showUser;
+	
+	private final String _numshowUser="users_table_info";
+	@FindBy(id=_numshowUser)
+	private WebElement numshowUser;
+	
+	private final String _numUser="users_table_info";
+	@FindBy(id=_numUser)
+	private WebElement numsUser;
+	
+	private final String _searchUser="//input[@class='form-control input-sm']";
+	@FindBy(xpath=_searchUser)
+	private WebElement searchUser;
+
+	private final String _table="users_table";
+	@FindBy(id=_table)
+	private WebElement table;
+	
+	public String getnumberShowUser()
+	{
+		page.ScrollToBottomOfThePage(driver);
+		String s=page.getElementText(numsUser);
+		return s;
+	}
 	
 	public void userMgClick()
 	{
+		
 		page.clickOnElement(mgmentUser);
 	}
 
-	public boolean elementDisplayed()
+	public void userTabClick()
 	{
-		boolean status=page.isElementDisplayed(menuList);
-		return status;
-	}
-	public void elementWait()
-	{
-		
-		WaitUtility.setImplicitWait(driver);
+		page.clickOnElement(userTab);
 	}
 
+	public boolean elementCheck()
+	{
+		boolean status=page.isElementDisplayed(userTab);
+		return status;
+	}
+	public String userPageTitle()
+	{
+		String s=page.getPageTitle(driver);
+		return s;
+	}
+	public void addUser()
+	{
+		page.clickOnElement(addUser);
+	}
+	
+	public void showUserClick()
+	{
+		page.clickOnElement(showUser);
+	}
+	
+	public void selectShowUser()
+	{
+		page.clickOnElement(showUser);
+		page.dropDownSelectByvisibleText(showUser, "25");
+	}
+	public void pageWait()
+	{
+		wait.setPageLoadWait(driver);
+		
+		//wait.waitForElementTOBeClickables(driver,"//select[@name='users_table_length']" );
+
+	}
+	public void searchUser(String search)
+	{
+		page.enterText(searchUser, search);
+	}
 	
 }

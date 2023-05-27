@@ -40,6 +40,7 @@ public class HomePage extends TestHelper {
 	
 	@FindBy(xpath="//section[@class='content-header']")
 	WebElement header;
+	
 	public String elementText()
 	{
 		String s=page.getElementText(header);

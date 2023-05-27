@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Suite" thread-count="2" parallel="methods">
 
 
 <listeners>
@@ -12,7 +12,7 @@
 
 
 </listeners>
-  <test thread-count="2" parallel="classes"  name="Test">
+  <test   name="Test">
   <parameter name="browser" value="chrome"></parameter>
   <groups>
   <run>
@@ -21,8 +21,8 @@
   </run>
   </groups>
     <classes>
-    <class name="com.qalegend.testscript.LoginTest"/>
-   
+    <class name="com.qalegend.testscript.LogTest"/>
+   <class name="com.qalegend.testscript.ProfitPageTest"/>
     
     
         </classes>

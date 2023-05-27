@@ -34,6 +34,12 @@ public class PosPage extends TestHelper{
 	
 	@FindBy(xpath = "//input[@class='select2-search__field']")
 	WebElement price;
+
+	private final String _defaultPrice="select2-price_group-container";
+	@FindBy(id=_defaultPrice)
+	private WebElement defaultPrice;
+	
+	
 	public void elementWait()
 	{
 		
@@ -42,7 +48,9 @@ public class PosPage extends TestHelper{
 	
 	public void selectPrice()
 	{
-		page.dropDownSelectByIndex(price, 1);
+		page.clickOnElement(defaultPrice);
+		page.dropDownSelectByIndex(defaultPrice, 2);
+		page.clickOnElement(defaultPrice);
 	}
 	public void locationMouseHover()
 	{

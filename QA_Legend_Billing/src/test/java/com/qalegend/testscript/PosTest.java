@@ -11,7 +11,7 @@ import com.qalegend.pages.PosPage;
 public class PosTest extends BaseSetUp{
 	LogIn log;
 	PosPage pos;
-  @Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=1) 
+  @Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=1,description = "TC0010 verify POS Terminal") 
   public void posFunctio(String uname,String pword)   {
   log=new LogIn(driver);
   pos=new PosPage(driver);

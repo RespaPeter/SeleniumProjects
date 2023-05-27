@@ -27,6 +27,10 @@ public class ProfitPage extends TestHelper {
 	@FindBy(xpath="//button[@class='close']")
 	WebElement closeButton;
 	
+	private final String _closeSign="//button[@class='close']";
+	@FindBy(xpath=_closeSign)
+	WebElement closeSign;
+	
 	public String getTitle()
 	{
 		String s=page.getElementText(title);
@@ -52,4 +56,9 @@ public class ProfitPage extends TestHelper {
 	{
 		page.clickOnElement(closeButton);
 	}
+	public void closeSign()
+	{
+		page.clickOnElement(closeSign);
+	}
+	
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,7 +19,11 @@ public class PageUtility {
 		sub.click();
 		
 	}
-	
+	public String getMessage(WebElement element)
+	{
+		String message=element.getText();
+		return message;
+	}
 	public String getPageTitle(WebDriver driver)
 	{
 		String title=driver.getTitle();
@@ -166,6 +171,20 @@ public class PageUtility {
 		Select select=new Select(target);
 		select.selectByValue(attributeValue);
 	}
+	
+	
+	
+	public void ScrollDownOfWebpage(WebDriver driver, int x, int y) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(x,y)");
+	}
+	
+	public void ScrollToBottomOfThePage(WebDriver driver) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+	}
+
+	
 	public void dropDownSelectByvisibleText(WebElement target,String text)
 	{
 		Select select=new Select(target);
@@ -200,10 +219,11 @@ public class PageUtility {
 	}
 	public Boolean isElementDisplayed(WebElement element)
 	{
-		boolean value=element.isSelected();
+		boolean value=element.isDisplayed();
 			return value;
 		
 	}
+	
 
-  
+	  
 }

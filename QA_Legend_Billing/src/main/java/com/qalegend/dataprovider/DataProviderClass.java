@@ -14,4 +14,5 @@ public class DataProviderClass {
 		Object[][] data=ExcelUtility.getDataFromExcel(System.getProperty("user.dir")+Constants.EXCEL_PATH,"Sheet1");
 		 return data;
 	  }
+	
 }
