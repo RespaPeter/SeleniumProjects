@@ -25,7 +25,6 @@ public class PosTest extends BaseSetUp{
 	pos.mouseHoverKey();
 	pos.selectLocation();
 	pos.locationMouseHover();
-	//pos.elementWait();
 	pos.selectPrice();
   }  
 }

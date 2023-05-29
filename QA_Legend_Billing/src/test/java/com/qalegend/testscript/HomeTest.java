@@ -39,7 +39,7 @@ public class HomeTest extends BaseSetUp {
 		Assert.assertEquals(actual, expected);
 	    System.out.println("Successfully entered into Home Page");
 	  }
-@Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=1,description = "TC009 verify calculator",groups = {"Regression"})
+@Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=1,description = "TC009 verify calculator",groups = {"Sanity"})
   public void calculatorClick(String uname,String pword) throws InvalidFormatException, IOException {
 	log=new LogIn(driver);
 	log.validLog(uname,pword);

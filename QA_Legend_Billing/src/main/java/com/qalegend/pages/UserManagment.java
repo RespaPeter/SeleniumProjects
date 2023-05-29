@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,7 @@ import com.qalegend.utilities.TestHelper;
 import com.qalegend.utilities.WaitUtility;
 
 public class UserManagment extends TestHelper {
+	private static final Enum Xpath = null;
 	public WebDriver driver;
 	public UserManagment(WebDriver driver)
 	{
@@ -56,6 +58,16 @@ public class UserManagment extends TestHelper {
 	private final String _table="users_table";
 	@FindBy(id=_table)
 	private WebElement table;
+	
+	private final String _tabletr="//table[@class='table table-bordered table-striped dataTable no-footer']";
+	@FindBy(xpath=_tabletr)
+	private WebElement tabletr;
+	
+	/*private final String _tabletr="//table/tbody/tr";
+	@FindBy(xpath=_tabletr)
+	private WebElement tabletr;*/
+	
+	
 	
 	public String getnumberShowUser()
 	{
@@ -102,14 +114,31 @@ public class UserManagment extends TestHelper {
 	}
 	public void pageWait()
 	{
-		wait.setPageLoadWait(driver);
+		//wait.setPageLoadWait(driver);
+		wait.setHardWait();
 		
 		//wait.waitForElementTOBeClickables(driver,"//select[@name='users_table_length']" );
 
+	}
+	
+	public void pageDown()
+	{
+		page.ScrollToBottomOfThePage(driver);
+		wait.setHardWait();
+		
+		//wait.waitForElementToBeVisible(driver, "//*[@id=\\\"users_table\\\"]/tbody/tr[25]", Xpath);
 	}
 	public void searchUser(String search)
 	{
 		page.enterText(searchUser, search);
 	}
 	
+	public int getRowSize()
+	{
+		
+	List<WebElement> li=tabletr.findElements(By.tagName("tr"));
+	int s=li.size();
+	return s;
+		
+	}
 }

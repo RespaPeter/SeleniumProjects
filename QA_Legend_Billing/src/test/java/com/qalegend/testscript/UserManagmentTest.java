@@ -21,7 +21,8 @@ public class UserManagmentTest extends BaseSetUp {
 
 	LogIn log;
 	UserManagment user;
-	@Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=2,description = "TC0018 Verify userManagment Tab Opened Successfullly",groups = {"Regression"})
+
+	@Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=2,description = "TC0019 Verify userManagment Tab Opened Successfullly",groups = {"Regression"})
   public void elementCheck(String uname,String pword){
 		
 		log=new LogIn(driver);
@@ -33,7 +34,7 @@ public class UserManagmentTest extends BaseSetUp {
 		Assert.assertEquals(actual, true,"User Managment Tab is not Opened");
 		
 	}
-	@Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=2,description = "TC0019 Verify user Tab Opened Successfullly",groups = {"Regression"})
+	@Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=2,description = "TC0020 Verify user Tab Opened Successfullly",groups = {"Regression"})
 	  public void userTabCheck(String uname,String pword){
 			
 			log=new LogIn(driver);
@@ -47,7 +48,7 @@ public class UserManagmentTest extends BaseSetUp {
 			Assert.assertEquals(actual, expected,"User Tab is not opened");
 								
 		}
-	@Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=2,description = "TC0020 Verify Adduser button",groups = {"Regression"})
+	@Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=2,description = "TC0021 Verify Adduser button",groups = {"Regression"})
 	  public void addUserButton(String uname,String pword){
 			
 			log=new LogIn(driver);
@@ -62,8 +63,8 @@ public class UserManagmentTest extends BaseSetUp {
 			Assert.assertEquals(actual, expected,"AddUser is not opened");
 						
 		}
-	@Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=2,description = "TC0021 Verify show user button",groups = {"Regression"})
-	  public void showUserButton(String uname,String pword){
+	@Test(dataProvider = "UserCredentials", dataProviderClass = DataProviderClass.class,priority=2,description = "TC0022 Verify show user button",groups = {"Regression"})
+	  public void showUserButton(String uname,String pword) {
 			
 			log=new LogIn(driver);
 			user=new UserManagment(driver);
@@ -74,14 +75,13 @@ public class UserManagmentTest extends BaseSetUp {
 			user.showUserClick();
 			user.selectShowUser();
 			user.pageWait();
-			
-			
-			/*String actual=user.getnumberShowUser();
-			String expected="Showing 1 to 25 of 1,114 entries";
-			Assert.assertEquals(actual, expected,"Show user button not working");
-			System.out.println("text="+actual);*/
-			
+			user.pageDown();
+			int actualSize=user.getRowSize();
+			int expectedSize=26;
+			Assert.assertEquals(actualSize, expectedSize, "Not displayed 25 number of customers");
+						
 	}	
+
 	@Test(dataProvider = "searchKey",priority=2,description = "TC0022 Verify search user button",groups = {"Regression"})
 	  public void searchUserButton(String uname,String pword,String search){
 			

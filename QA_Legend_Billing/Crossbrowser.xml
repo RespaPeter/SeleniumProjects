@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" thread-count="2" parallel="methods">
+<suite name="Suite">
 
 
 <listeners>
@@ -12,20 +12,20 @@
 
 
 </listeners>
-  <test   name="Test">
-  <parameter name="browser" value="chrome"></parameter>
-  <groups>
-  <run>
-  <include name="Regression"></include>
-  <exclude name="Smoke"></exclude>
-  </run>
-  </groups>
-    <classes>
-    <class name="com.qalegend.testscript.LogTest"/>
-   <class name="com.qalegend.testscript.ProfitPageTest"/>
+  <test thread-count="5" name="chrome test">
+  <parameter  name="browser" value="chrome"></parameter>
+  <classes>
+    <class name="com.qalegend.testscript.LogTest">
+  	 <methods>
+		  <exclude name="verifyLoginPageTitle"/>
+		  <include name="inValidLogin"/>
+	  </methods>
     
-    
+    </class>
         </classes>
  
   </test> <!-- Test -->
+  
+  
+  
 </suite> <!-- Suite -->

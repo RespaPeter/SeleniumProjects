@@ -41,8 +41,8 @@ public class AppTourPage extends TestHelper {
 	}
 	public void elementWait()
 	{
-		
-		wait.waitForElementTOBeClickables(driver,"//button[@class='btn btn-default btn-sm']");
+		wait.setHardWait();
+		//wait.waitForElementTOBeClickables(driver,"//button[@class='btn btn-default btn-sm']");
 	}
 	public void windowWait()
 	{

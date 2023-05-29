@@ -67,7 +67,7 @@ public class LogTest extends BaseSetUp {
 	  
 	  
   }
-  @Test(dataProvider = "resetPassword",priority=6,description = "TC006 Verify Reset Password Link",groups = {"Regression"},retryAnalyzer = Retry.class)
+  @Test(priority=6,description = "TC006 Verify Reset Password Link",dataProvider = "resetPassword",groups = {"Regression"},retryAnalyzer = Retry.class)
   public void resetPassWord(String mail,String pass)
   {
 	  log=new LogIn(driver);

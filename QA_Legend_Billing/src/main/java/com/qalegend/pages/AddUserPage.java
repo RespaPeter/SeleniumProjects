@@ -78,6 +78,10 @@ public class AddUserPage extends TestHelper {
 	@FindBy(xpath=_msg)
 	private WebElement msg;
 	
+	private final String _existingMail="email-error";
+	@FindBy(id=_existingMail)
+	private WebElement existingMail;
+	
 
 	public void enterUserDetails(String prefix,String firstName,String lastName,String email,String userName,String passWord,String confirm,String commission)
 	{
@@ -117,6 +121,7 @@ public class AddUserPage extends TestHelper {
 		page.clickOnElement(selectContact);
 		page.dropDownSelectByIndex(options, 2);
 		page.clickOnElement(selectContact);
+		wait.setHardWait();
 	}
 	
 	public void submitButtonClick()
@@ -124,6 +129,11 @@ public class AddUserPage extends TestHelper {
 		page.clickOnElement(button);
 	}
 	
+	public String getErrorMail()
+	{
+		String mailMsg=page.getElementText(existingMail);
+		return mailMsg;
+	}
 
 	public String getMessage() {
 		// TODO Auto-generated method stub

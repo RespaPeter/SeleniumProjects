@@ -5,8 +5,9 @@
     <classes>
       <class name="com.qalegend.testscript.AddUserTest">
         <methods>
-          <include name="enterUserDetails" invocation-numbers="0"/>
+          <include name="enterUserDetails"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.qalegend.testscript.AddUserTest -->
     </classes>
