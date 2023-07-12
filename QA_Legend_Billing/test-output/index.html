@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\PRAGAL\git\SeleniumProjects\QA_Legend_Billing\Crossbrowser.xml</span>
+                    <span>C:\Users\PRAGAL\git\SeleniumProjects\QA_Legend_Billing\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.qalegend.testscript.LogTest" class="method navigator-link" hash-for-method="inValidLogin(admin123, 123456)">inValidLogin(admin123, 123456)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.qalegend.testscript.HomeTest" class="method navigator-link" hash-for-method="closeAlertMessage(admin, 123456)">closeAlertMessage(admin, 123456)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -122,17 +122,17 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.qalegend.testscript.LogTest</span>
+              <span class="class-name">com.qalegend.testscript.HomeTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="inValidLogin(admin123, 123456)">
-                  </a> <!-- inValidLogin(admin123, 123456) -->
-                  <span class="method-name">inValidLogin</span>
-                  <span class="parameters">(admin123, 123456)</span>
+                  <a name="closeAlertMessage(admin, 123456)">
+                  </a> <!-- closeAlertMessage(admin, 123456) -->
+                  <span class="method-name">closeAlertMessage</span>
+                  <span class="parameters">(admin, 123456)</span>
                   <em>
-(TC003 verify Invalid Login Details)                  </em>
+(TC007 Verify alert box close Sucessfully)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -140,7 +140,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\PRAGAL\git\SeleniumProjects\QA_Legend_Billing\Crossbrowser.xml</span>
+            <span class="header-content">C:\Users\PRAGAL\git\SeleniumProjects\QA_Legend_Billing\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -151,17 +151,15 @@
     &lt;listener class-name=&quot;com.qalegend.extentReport.ExtentReportCls&quot;/&gt;
     &lt;listener class-name=&quot;com.qalegend.utilities.Listener&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;chrome test&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;parameter grouping Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.qalegend.testscript.LogTest&quot;&gt;
+      &lt;class name=&quot;com.qalegend.testscript.HomeTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;inValidLogin&quot;/&gt;
-          &lt;exclude name=&quot;verifyLoginPageTitle&quot;/&gt;
+          &lt;include name=&quot;closeAlertMessage&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.qalegend.testscript.LogTest --&gt;
+      &lt;/class&gt; &lt;!-- com.qalegend.testscript.HomeTest --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- chrome test --&gt;
+  &lt;/test&gt; &lt;!-- parameter grouping Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -173,7 +171,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">chrome test (1 class)</span>
+                <span class="test-name">parameter grouping Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -184,10 +182,10 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">Smoke</span>
+              <span class="test-group-name">Regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">inValidLogin</span>
+                <span class="method-in-group-name">closeAlertMessage</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -209,14 +207,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'inValidLogin')
-data.setCell(0, 2, 'com.qalegend.testscript.LogTest')
-data.setCell(0, 3, 1284);
+data.setCell(0, 1, 'closeAlertMessage')
+data.setCell(0, 2, 'com.qalegend.testscript.HomeTest')
+data.setCell(0, 3, 2170);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -231,21 +229,15 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">5 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.qalegend.testscript.LogTest</span>
+              <span class="ignored-class-name">com.qalegend.testscript.HomeTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">rememberMe</span>
+                <span class="ignored-method-name">homeCheck</span>
                 <br/>
-                <span class="ignored-method-name">logfun</span>
-                <br/>
-                <span class="ignored-method-name">resetPassWord</span>
-                <br/>
-                <span class="ignored-method-name">verifyLoginPageTitle</span>
-                <br/>
-                <span class="ignored-method-name">forgotPassWord</span>
+                <span class="ignored-method-name">calculatorClick</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -257,18 +249,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.qalegend.testscript.LogTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.qalegend.testscript.HomeTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">inValidLogin(admin123, 123456)</span>
-                <span class="method-start">8481 ms</span>
+                <span class="method-name">closeAlertMessage(admin, 123456)</span>
+                <span class="method-start">7425 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=inValidLogin status=SUCCESS method=LogTest.inValidLogin(java.lang.String,java.lang....)</span>
-                <span class="method-start">10105 ms</span>
+                <span class="method-name">tearDown([TestResult name=closeAlertMessage status=SUCCESS method=HomeTest.closeAlertMessage(java.lang.String...)</span>
+                <span class="method-start">9878 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

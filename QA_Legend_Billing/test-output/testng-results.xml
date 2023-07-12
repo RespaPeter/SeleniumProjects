@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-29T11:18:15 IST" name="Suite" finished-at="2023-05-29T11:18:26 IST" duration-ms="10951">
+  <suite started-at="2023-05-30T07:41:07 IST" name="Suite" finished-at="2023-05-30T07:41:18 IST" duration-ms="10687">
     <groups>
-      <group name="Smoke">
-        <method signature="LogTest.inValidLogin(java.lang.String,java.lang.String)[pri:3, instance:com.qalegend.testscript.LogTest@37d4349f]" name="inValidLogin" class="com.qalegend.testscript.LogTest"/>
-      </group> <!-- Smoke -->
+      <group name="Regression">
+        <method signature="HomeTest.closeAlertMessage(java.lang.String,java.lang.String)[pri:1, instance:com.qalegend.testscript.HomeTest@7c24b813]" name="closeAlertMessage" class="com.qalegend.testscript.HomeTest"/>
+      </group> <!-- Regression -->
     </groups>
-    <test started-at="2023-05-29T11:18:15 IST" name="chrome test" finished-at="2023-05-29T11:18:26 IST" duration-ms="10951">
-      <class name="com.qalegend.testscript.LogTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.qalegend.testscript.LogTest@37d4349f]" started-at="2023-05-29T11:18:16 IST" name="setUp" finished-at="2023-05-29T11:18:24 IST" duration-ms="8478" status="PASS">
+    <test started-at="2023-05-30T07:41:07 IST" name="parameter grouping Test" finished-at="2023-05-30T07:41:18 IST" duration-ms="10687">
+      <class name="com.qalegend.testscript.HomeTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.qalegend.testscript.HomeTest@7c24b813]" started-at="2023-05-30T07:41:08 IST" name="setUp" finished-at="2023-05-30T07:41:15 IST" duration-ms="7424" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,11 +21,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="inValidLogin(java.lang.String,java.lang.String)[pri:3, instance:com.qalegend.testscript.LogTest@37d4349f]" started-at="2023-05-29T11:18:24 IST" name="inValidLogin" description="TC003 verify Invalid Login Details" data-provider="invalidLogIn" finished-at="2023-05-29T11:18:26 IST" duration-ms="1284" status="PASS">
+        <test-method signature="closeAlertMessage(java.lang.String,java.lang.String)[pri:1, instance:com.qalegend.testscript.HomeTest@7c24b813]" started-at="2023-05-30T07:41:15 IST" name="closeAlertMessage" description="TC007 Verify alert box close Sucessfully" data-provider="UserCredentials" finished-at="2023-05-30T07:41:17 IST" duration-ms="2170" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[admin123]]>
+                <![CDATA[admin]]>
               </value>
             </param>
             <param index="1">
@@ -36,19 +36,19 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- inValidLogin -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.qalegend.testscript.LogTest@37d4349f]" started-at="2023-05-29T11:18:26 IST" name="tearDown" finished-at="2023-05-29T11:18:26 IST" duration-ms="291" status="PASS">
+        </test-method> <!-- closeAlertMessage -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.qalegend.testscript.HomeTest@7c24b813]" started-at="2023-05-30T07:41:17 IST" name="tearDown" finished-at="2023-05-30T07:41:18 IST" duration-ms="326" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=inValidLogin status=SUCCESS method=LogTest.inValidLogin(java.lang.String,java.lang.String)[pri:3, instance:com.qalegend.testscript.LogTest@37d4349f] output={null}]]]>
+                <![CDATA[[TestResult name=closeAlertMessage status=SUCCESS method=HomeTest.closeAlertMessage(java.lang.String,java.lang.String)[pri:1, instance:com.qalegend.testscript.HomeTest@7c24b813] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.qalegend.testscript.LogTest -->
-    </test> <!-- chrome test -->
+      </class> <!-- com.qalegend.testscript.HomeTest -->
+    </test> <!-- parameter grouping Test -->
   </suite> <!-- Suite -->
 </testng-results>
