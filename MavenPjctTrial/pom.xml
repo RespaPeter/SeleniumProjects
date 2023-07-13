@@ -3,4 +3,29 @@
   <groupId>com.abc.eclipse</groupId>
   <artifactId>MavenPjctTrial</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>abc.eclipse.MavenJenkins</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+		</plugin>
+		</plugins>
+  </build>
 </project>
